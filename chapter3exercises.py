@@ -34,5 +34,6 @@ def grades():
     except:
         print "Enter a score between 0.0 and 1.0"
         grades()
+        
 
 grades()
