@@ -21,3 +21,9 @@ def FindPartsOfEmail():
     print "Extension:".ljust(10), extension
     
 FindPartsOfEmail()
+
+def courseraAssignment():
+    text = "X-DSPAM-Confidence:    0.8475";
+    number = text[text.find(':') + 1 : len(text)].strip()
+    print float(number)
+    
