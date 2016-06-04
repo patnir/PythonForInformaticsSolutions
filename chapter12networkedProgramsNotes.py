@@ -19,22 +19,31 @@ Created on Fri Jun 03 20:22:07 2016
 # equal to the domain name address
 
 import socket #python library
+import urllib
 
-my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-my_socket.connect(('www.py4inf.com', 80))
-
-# URL has three part - protocol, host, document
-# URL - Uniform Resource Locator
-
-# Request response cycle
-
-my_socket.send('GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n')
-
-while True:
-    data = my_socket.recv(512)
-    if (len(data) < 1):
-        break;
-    print data
-
-my_socket.close()
+def usingSocket():
+    my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    my_socket.connect(('www.py4inf.com', 80))
+    
+    # URL has three part - protocol, host, document
+    # URL - Uniform Resource Locator
+    
+    # Request response cycle
+    
+    my_socket.send('GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n')
+    
+    while True:
+        data = my_socket.recv(512)
+        if (len(data) < 1):
+            break;
+        print data
+    
+    my_socket.close()
+    
+def usingUrllib():
+    fhand = urllib.urlopen('http://www.py4inf.com/code/romeo.txt')
+    for line in fhand:
+        print line.rstrip()
+        
+usingUrllib()
