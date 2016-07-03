@@ -32,3 +32,17 @@ Created on Sun Jul 03 07:31:19 2016
 
 # Insert table from outside to inner 
 
+# The JOIN operation links links across several tables as part of a select operation
+
+# You must tell the JOIN method how to use the keys that make the ocnnections between the tables with the ON clause
+
+# Example: Select Album.title, Artist.name from Album join Artist on Album.artist_id = Artist.id
+
+# Example: Select Track.title, Genre.name, Album.title from Genre join Track join Album on Track.genre_id = Genre.id AND Track.album_id = Album.id ORDER BY Track.title DESC
+
+# No ON clause provides all combinations:
+# Example: Select Track.title, Genre.name from Track join Genre
+
+# Getting all Tracks, Artists, Albums and Genres:
+# Select Track.title, Artist.name, Album.title, Genre.name from Track join Artist join Album join Genre ON Track.genre_id = Genre.id AND Track.album_id = Album.id AND Album.artist_id = Artist.id
+
