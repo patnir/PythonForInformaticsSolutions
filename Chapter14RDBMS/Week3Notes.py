@@ -29,3 +29,6 @@ Created on Sun Jul 03 07:31:19 2016
 # Logical key: for example, we look up tracks using a logical key that refers to it's title, and the same for an album
 
 # Create the ends of the arrows before you create the beginning of the arrows
+
+# Insert table from outside to inner 
+
